@@ -6,7 +6,9 @@ int main(){
 
     int var;
     char answer;
+    int mask = 1;
     int counter = 0;
+    int result;
 
     printf("Welcome to the Zeros program.\n");
     start:
