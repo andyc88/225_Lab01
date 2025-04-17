@@ -3,33 +3,33 @@
 #include <stdio.h>
 
 int main(){
-    int var;
+    int num;
     char answer;
-    int mask = 1;
     int counter = 0;
-    int result;
+    unsigned int mask = 21347483648;
 
-    printf("Welcome to the Zeros program.\n");
-    start:
-    printf("Please enter a number: \n");
-    scanf("%d", &var);
+    printf("Welcome to the Zeros program.\n"); 
 
-    while(counter < 32){
-        if (var != 0){
-         var<<1;
-        } else { 
-            return counter;
+    do {
+        counter = 0;
+        mask = 21347483648;
+
+        printf("Please enter a number: \n");
+        scanf("%d", &num);
+
+        while (num & mask) {
+            counter ++;
         }
+        mask >>=1;
+    
+
+    printf("The number of leading zeroes is: ", counter);
+
+    printf("Continue (y/n)?: ");
+    scanf(" %c", &answer);
     }
-        printf("The number of bits set is: ", counter);
-        printf("Continue (y/n)?: ");
-        scanf(" %c", &answer);
-    
-        if(answer == "y"){
-            goto start;
-        } else {
-            printf("Exiting");
-        }
-    
-        return 0;
+    while (answer == 'y');
+
+    printf("Exiting\n");
+    return 0;
 }
