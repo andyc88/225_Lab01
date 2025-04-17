@@ -3,7 +3,6 @@
 #include <stdio.h>
 
 int main(){
-
     int var;
     char answer;
     int mask = 1;
